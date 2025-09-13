@@ -8,7 +8,7 @@ import time
 import sys
 
 # Always tell NCBI who you are
-Entrez.email = "pozogu@upshiftrx.ai"
+Entrez.email = os.getenv('PUBMED_EMAIL', 'contact@upshiftrx.ai')
 
 def search_pubmed(drug, disease, max_results=100):
     """Search PubMed for articles mentioning both a drug and a disease."""
