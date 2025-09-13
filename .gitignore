@@ -56,6 +56,7 @@ temp/
 # Environment variables
 .env
 .env.local
+.env.production
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
