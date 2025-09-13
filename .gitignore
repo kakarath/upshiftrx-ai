@@ -1,32 +1,64 @@
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.egg
-*.egg-info/
-.eggs/
-dist/
+*.py[cod]
+*$py.class
+*.so
+.Python
 build/
-.venv/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
 venv/
-ENV/
 env/
-.ipynb_checkpoints/
+ENV/
 
-# Results & large files
-results/*.csv
-results/*.json
-results/*.tsv
-results/*.txt
-
-# Allow small example CSVs
-!results/examples/*.csv
-
-# Logs
-*.log
-
-# IDE settings
+# IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Large datasets (keep in private repo)
+results/full_*
+results/drugbank/
+results/chembl/
+results/*_full.csv
+results/large_*
+
+# Models and proprietary data
+models/
+*.pkl
+*.joblib
+*.h5
+
+# Temporary files
+*.tmp
+*.log
+temp/
+
+# Environment variables
+.env
+.env.local
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Private repo reference (if using relative paths)
+../upshiftrx-ai-private/

@@ -39,7 +39,37 @@ If the system can re-find what humans already know, it’s a strong signal we’
 
 ## 🏗️ Repo Structure
 
-## **coming soon**
+```
+upshiftrx-ai/                    # 👁️ Public Repository
+├── src/                         # Core Python scripts
+│   ├── build_map.py            # PubMed mining pipeline
+│   ├── graph_results.py        # Interactive visualization
+│   ├── hello_pubmed.py         # PubMed API utilities
+│   └── combine_results.py      # Data aggregation
+├── config/                      # Configuration files
+│   ├── drugs.json              # Drug lists for batch processing
+│   ├── diseases.json           # Disease lists for batch processing
+│   └── config.yaml             # Main configuration
+├── results/examples/            # 📊 Sample datasets (small)
+│   └── sample_results.csv      # Demo data for testing
+├── data/                        # 📥 Data fetching scripts
+├── notebooks/                   # 📓 Jupyter exploration (public)
+├── docs/                        # 📚 Documentation
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
+```
+
+### 🔒 Private Repository (Collaborators Only)
+```
+upshiftrx-ai-private/           # 🔐 Private Repository
+├── results/full_pubmed/        # Complete PubMed datasets
+├── results/drugbank/           # DrugBank/ChEMBL data
+├── models/                     # Trained ML models
+├── notebooks/                  # Analysis with full datasets
+└── src/                        # Proprietary processing scripts
+```
 
 ## ⚡ Quickstart
 
@@ -84,6 +114,17 @@ Get up and running in minutes.
 6. View results
 
 ---
+
+## ⚡ Public Demo vs Full Datasets
+
+This repository contains the **public prototype** of UpShiftRx AI:
+
+- All scripts needed to run the **PubMed mining pipeline**.
+- A **minimal example dataset** (`results/examples/sample_results.csv`) so you can try the visualization out-of-the-box.
+- Documentation and roadmap to understand our vision.
+
+**Full datasets and advanced pipelines** are **kept private** for compliance and IP protection.  
+If you are a collaborator, partner, or interested researcher, you can request access via `info@upshiftrx.ai`.
 
 This way contributors and testers have **two clear paths**:
 

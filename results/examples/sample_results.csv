@@ -1,10 +1,6 @@
 drug,disease,pmid,title,journal,year
-Aspirin,Colon Cancer,123456,"Aspirin use and reduced risk of colon cancer","New England Journal of Medicine",2010
-Metformin,Type 2 Diabetes,234567,"Metformin as first-line therapy for type 2 diabetes","Lancet",2012
-Statins,Alzheimer's,345678,"Statins and cognitive decline in Alzheimer's disease","JAMA Neurology",2015
-Hydroxychloroquine,COVID-19,456789,"Efficacy of hydroxychloroquine in COVID-19 treatment","Nature Medicine",2020
-Imatinib,Leukemia,567890,"Imatinib as targeted therapy in chronic myeloid leukemia","Blood",2001
-Lisinopril,Hypertension,678901,"Lisinopril for the management of hypertension","The Lancet",2005
-Fluoxetine,Depression,789012,"Fluoxetine in the treatment of major depressive disorder","American Journal of Psychiatry",2003
-Tamoxifen,Breast Cancer,890123,"Tamoxifen for breast cancer prevention","Journal of Clinical Oncology",1998
-Levothyroxine,Hypothyroidism,901234,"Levothyroxine therapy in hypothyroidism","Thyroid",2007
+Aspirin,Colon Cancer,12345678,"Aspirin reduces colon cancer risk","Journal of Medicine",2020
+Aspirin,Colon Cancer,87654321,"Long-term aspirin use and colorectal adenoma","Cancer Research",2019
+Metformin,Type 2 Diabetes,11111111,"Metformin efficacy in diabetes management","Diabetes Care",2021
+Metformin,Alzheimer's,22222222,"Metformin and cognitive function","Neurology",2020
+Statins,Cardiovascular Disease,33333333,"Statin therapy outcomes","Cardiology Today",2021

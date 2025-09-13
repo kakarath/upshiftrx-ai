@@ -1,0 +1,27 @@
+# UpShiftRx Configuration
+
+# Data paths (can point to private repo if available)
+data:
+  # Public sample data (always available)
+  examples_dir: "results/examples/"
+  
+  # Private data paths (only available to collaborators)
+  # Uncomment and adjust paths if you have access to private repo
+  # private_repo_path: "../upshiftrx-ai-private/"
+  # full_pubmed_dir: "../upshiftrx-ai-private/results/full_pubmed/"
+  # drugbank_dir: "../upshiftrx-ai-private/results/drugbank/"
+  # models_dir: "../upshiftrx-ai-private/models/"
+  # embeddings_dir: "../upshiftrx-ai-private/results/embeddings/"
+  # processed_data_dir: "../upshiftrx-ai-private/results/processed_data/"
+  # final_results_dir: "../upshiftrx-ai-private/results/final_results/"
+# API settings
+pubmed:
+  email: "pozogu@upshiftrx.ai"  # Required by NCBI
+  max_results_default: 50
+  rate_limit_sleep: 2.0
+  batch_size: 50
+
+# Processing settings
+processing:
+  use_sample_data: false  # Set to false when using full datasets
+  output_dir: "results/"
