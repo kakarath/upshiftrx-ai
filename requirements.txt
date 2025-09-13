@@ -1,0 +1,25 @@
+# Core scientific stack
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+
+# NLP + data mining
+transformers
+torch
+spacy
+nltk
+
+# Bioinformatics + drug data
+biopython
+chembl_webresource_client
+pubmed-parser
+
+# Web requests + APIs
+requests
+beautifulsoup4
+
+# Jupyter notebooks
+jupyter
+notebook
