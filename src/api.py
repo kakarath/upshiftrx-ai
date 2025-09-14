@@ -7,7 +7,7 @@ import json
 import os
 from pathlib import Path
 from hello_pubmed import search_pubmed, fetch_details
-from graph_results import build_graph
+# from graph_results import build_graph  # Disabled for deployment
 import asyncio
 import uuid
 
@@ -119,20 +119,10 @@ async def get_results():
 @app.get("/graph")
 async def generate_graph(input_file: str = "results/master_results.csv"):
     """Generate interactive graph from results"""
-    try:
-        input_path = Path(input_file)
-        if not input_path.exists():
-            raise HTTPException(status_code=404, detail="Results file not found")
-        
-        output_file = "results/drug_disease_graph.html"
-        build_graph(str(input_path), output_file)
-        
-        return {
-            "message": "Graph generated successfully",
-            "graph_file": output_file
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    return {
+        "message": "Graph generation temporarily disabled in deployment",
+        "note": "Use local development for graph visualization"
+    }
 
 if __name__ == "__main__":
     import uvicorn
