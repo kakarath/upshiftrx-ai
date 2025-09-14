@@ -24,12 +24,12 @@ app.add_middleware(
 class DrugDiseaseQuery(BaseModel):
     drug: str
     disease: str
-    max_results: Optional[int] = 50
+    max_results: int = 50
 
 class BatchQuery(BaseModel):
     drugs: List[str]
     diseases: List[str]
-    max_results: Optional[int] = 50
+    max_results: int = 50
 
 class AnalysisResult(BaseModel):
     drug: str
