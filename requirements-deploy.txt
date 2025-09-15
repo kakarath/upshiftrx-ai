@@ -1,5 +1,5 @@
 biopython==1.81
-pandas==2.0.3
+pandas==2.3.2
 fastapi==0.68.0
 uvicorn[standard]==0.15.0
 pydantic==1.10.12
