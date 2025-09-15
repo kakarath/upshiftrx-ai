@@ -1,7 +1,7 @@
 import json
 import requests
 
-def handler(event, context):
+def lambda_handler(event, context):
     """Netlify serverless function for UpShiftRx API"""
     
     # Handle CORS
