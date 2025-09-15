@@ -16,12 +16,31 @@ def load_config(config_path="config/config.yaml"):
             'pubmed': {'email': 'your-email@domain.com', 'max_results_default': 50, 'rate_limit_sleep': 2.0},
             'processing': {'use_sample_data': True, 'output_dir': 'results/'}
         }
+    except yaml.YAMLError as e:
+        print(f"Error parsing YAML config: {e}")
+        config = {
+            'data': {'examples_dir': 'results/examples/'},
+            'pubmed': {'email': 'your-email@domain.com', 'max_results_default': 50, 'rate_limit_sleep': 2.0},
+            'processing': {'use_sample_data': True, 'output_dir': 'results/'}
+        }
+    except PermissionError as e:
+        print(f"Permission denied reading config: {e}")
+        config = {
+            'data': {'examples_dir': 'results/examples/'},
+            'pubmed': {'email': 'your-email@domain.com', 'max_results_default': 50, 'rate_limit_sleep': 2.0},
+            'processing': {'use_sample_data': True, 'output_dir': 'results/'}
+        }
     
-    # Check if private repo paths exist
+    # Check if private repo paths exist - validate path to prevent traversal
     private_repo = config.get('data', {}).get('private_repo_path')
-    if private_repo and not Path(private_repo).exists():
-        print("⚠️  Private repository not found. Using public sample data only.")
-        config['processing']['use_sample_data'] = True
+    if private_repo:
+        # Sanitize path to prevent directory traversal
+        safe_path = os.path.normpath(private_repo)
+        if not safe_path.startswith('.') and Path(safe_path).exists():
+            config['processing']['use_sample_data'] = False
+        else:
+            print("⚠️  Private repository not found or invalid path. Using public sample data only.")
+            config['processing']['use_sample_data'] = True
     
     return config
 

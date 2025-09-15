@@ -10,8 +10,8 @@ app = FastAPI(title="UpShiftRx API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=["https://upshiftrx.ai", "https://localhost:3000", "https://127.0.0.1:3000"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -42,12 +42,16 @@ def search_pubmed_simple(drug, disease, max_results=50):
     }
     
     try:
-        response = requests.get(search_url, params=params)
+        response = requests.get(search_url, params=params, timeout=30)
         response.raise_for_status()
         data = response.json()
         return data.get("esearchresult", {}).get("idlist", [])
+    except requests.RequestException as e:
+        raise HTTPException(status_code=500, detail="PubMed search failed")
+    except requests.Timeout as e:
+        raise HTTPException(status_code=500, detail="PubMed search timeout")
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"PubMed search failed: {str(e)}")
+        raise HTTPException(status_code=500, detail="Search service unavailable")
 
 def fetch_details_simple(id_list):
     """Fetch paper details using requests"""
@@ -64,7 +68,7 @@ def fetch_details_simple(id_list):
     }
     
     try:
-        response = requests.get(fetch_url, params=params)
+        response = requests.get(fetch_url, params=params, timeout=30)
         response.raise_for_status()
         
         # Simple XML parsing - just return basic info
@@ -116,5 +120,8 @@ async def get_diseases():
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 8000))
+    try:
+        port = int(os.environ.get("PORT", 8000))
+    except ValueError:
+        port = 8000
     uvicorn.run(app, host="0.0.0.0", port=port)
