@@ -5,8 +5,11 @@ _AI-Powered Drug Repurposing for Better, Faster, Smarter Treatments_
 ---
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](CHANGELOG.md)
+[![API Status](https://img.shields.io/badge/API-Live-green.svg)](https://idyllic-salmiakki-7b5539.netlify.app/.netlify/functions/health)
+[![PubMed Integration](https://img.shields.io/badge/PubMed-Live%20Data-brightgreen.svg)]()
 [![Python](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue.svg)]()
-[![Status](https://img.shields.io/badge/status-prototype-orange)]()
+[![Status](https://img.shields.io/badge/status-production-green)]()
 
 ## 🌟 Mission
 

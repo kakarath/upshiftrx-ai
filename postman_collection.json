@@ -1,0 +1,128 @@
+{
+  "info": {
+    "name": "UpShiftRx API",
+    "description": "AI-Powered Drug Repurposing API - Discover new uses for existing drugs through PubMed literature mining",
+    "version": "2.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://idyllic-salmiakki-7b5539.netlify.app/.netlify/functions",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        },
+        "description": "Check API health status"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Available Drugs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/drugs",
+          "host": ["{{baseUrl}}"],
+          "path": ["drugs"]
+        },
+        "description": "Retrieve list of available drugs for analysis"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Available Diseases",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/diseases",
+          "host": ["{{baseUrl}}"],
+          "path": ["diseases"]
+        },
+        "description": "Retrieve list of available diseases for analysis"
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze Drug-Disease Pair",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"drug\": \"aspirin\",\n  \"disease\": \"cancer\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/analyze",
+          "host": ["{{baseUrl}}"],
+          "path": ["analyze"]
+        },
+        "description": "Analyze drug-disease relationship using PubMed literature"
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze - Metformin & Diabetes",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"drug\": \"metformin\",\n  \"disease\": \"diabetes\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/analyze",
+          "host": ["{{baseUrl}}"],
+          "path": ["analyze"]
+        },
+        "description": "Example: Analyze metformin for diabetes treatment"
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze - Aspirin & Heart Disease",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"drug\": \"aspirin\",\n  \"disease\": \"heart disease\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/analyze",
+          "host": ["{{baseUrl}}"],
+          "path": ["analyze"]
+        },
+        "description": "Example: Analyze aspirin for heart disease prevention"
+      },
+      "response": []
+    }
+  ]
+}

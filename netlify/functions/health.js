@@ -8,7 +8,9 @@ exports.handler = async (event, context) => {
     body: JSON.stringify({
       status: 'healthy',
       service: 'upshiftrx-api',
-      platform: 'netlify'
+      platform: 'netlify',
+      version: '2.0.0',
+      features: ['real-pubmed-integration', 'live-data', 'xml-parsing']
     })
   }
 }

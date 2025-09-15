@@ -1,90 +1,55 @@
 # Changelog
 
-All notable changes to the UpShiftRx platform will be documented in this file.
+All notable changes to UpShiftRx AI will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [2.0.0] - 2024-01-15
 
-## [Unreleased]
+### 🚀 Major Release - Real PubMed Integration
 
-### Coming Soon
-- Web-based platform launch
-- API access for researchers
-- Interactive drug-disease network visualization
-- Advanced filtering and search capabilities
+#### Added
+- **Real-time PubMed integration** - Live literature searches
+- **XML parsing** for paper metadata (titles, journals, years)
+- **Enhanced API responses** with paper counts and search metadata
+- **Comprehensive API documentation** (API.md)
+- **Postman collection** for easy testing
+- **OpenAPI/Swagger specification** for interactive docs
+- **Security enhancements** with input validation and sanitization
+- **Error handling** with proper HTTP status codes
+- **CORS support** for cross-origin requests
 
-## [0.2.0] - 2025-01-13
+#### Changed
+- **Analyze endpoint** now returns real PubMed data instead of mock data
+- **Response format** enhanced with additional metadata fields
+- **Input validation** strengthened with character filtering
+- **Error messages** improved for better debugging
 
-### Added
-- Enhanced error handling for API failures and file operations
-- Path validation to prevent security vulnerabilities
-- Performance optimizations for graph generation
-- Configuration system for flexible data management
-- Command-line arguments for batch processing
-- Rate limiting improvements (2-second delays between requests)
+#### Security
+- Updated `requests` library to fix vulnerability (CVE-2024-35195)
+- Added input sanitization to prevent injection attacks
+- Implemented proper error handling to prevent information leakage
+- Added SECURITY.md with security policy
 
-### Changed
-- Moved large datasets to private repository for IP protection
-- Updated drug and disease lists to external JSON configuration files
-- Improved duplicate node handling in network visualization
-- Enhanced progress tracking and error reporting
-
-### Fixed
-- Path traversal vulnerabilities (CWE-22)
-- F-string syntax errors in JavaScript code generation
-- IndexError when processing empty PubMed fields
-- Missing directory creation for results output
-
-### Security
-- Added comprehensive input validation
-- Implemented secure file path handling
-- Enhanced error logging without exposing sensitive data
-
-## [0.1.0] - 2025-01-10
-
-### Added
-- Initial PubMed literature mining pipeline
-- Drug-disease relationship extraction
-- Interactive network visualization with PyVis
-- Batch processing for multiple drug-disease combinations
-- CSV export functionality for results
-- Basic configuration management
-
-### Features
-- Support for 50+ drugs and 60+ diseases
-- Automated PubMed API integration
-- Network graph generation with interactive controls
-- Slider-based filtering for paper count thresholds
-- Progress tracking for large batch operations
-
-### Technical
-- Python-based architecture with BioPython integration
-- NetworkX for graph analysis
-- Pandas for data manipulation
-- Configurable rate limiting for API compliance
-
-## [0.0.1] - 2025-01-05
-
-### Added
-- Project initialization
-- Basic PubMed API integration
-- Simple drug-disease query functionality
-- Initial documentation structure
+#### Technical
+- Serverless architecture on Netlify Functions
+- 15-second timeout handling for API requests
+- Rate limiting considerations documented
+- Production-ready error handling
 
 ---
 
-## Release Notes
+## [1.0.0] - 2024-01-14
 
-### Version 0.2.0 Highlights
-This release focuses on security, performance, and maintainability improvements. We've addressed critical vulnerabilities and enhanced the system's robustness for production use.
+### 🎉 Initial Release
 
-### Upcoming Features (v0.3.0)
-- Machine learning ranking of drug-disease associations
-- Integration with additional biomedical databases
-- RESTful API for programmatic access
-- Enhanced visualization with 3D network graphs
+#### Added
+- Basic API structure with health, drugs, diseases endpoints
+- Mock data responses for testing
+- Netlify Functions deployment
+- Basic CORS support
+- Simple input validation
 
-## Support
-
-For questions about releases or features:
-- **Contact**: upshiftrx.ai/contact
-- **Issues**: [GitHub Issues](https://github.com/upshiftrx/upshiftrx-ai/issues)
+#### Features
+- Health check endpoint
+- Drug and disease list endpoints
+- Basic analyze endpoint with mock data
+- Netlify serverless deployment

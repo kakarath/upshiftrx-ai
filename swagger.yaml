@@ -1,0 +1,224 @@
+openapi: 3.0.3
+info:
+  title: UpShiftRx API
+  description: |
+    AI-Powered Drug Repurposing Platform
+    
+    Discover new uses for existing drugs through intelligent literature mining of PubMed database.
+    
+    ## Features
+    - Real-time PubMed literature search
+    - Drug-disease relationship analysis
+    - Research paper metadata extraction
+    - Secure input validation
+    
+    ## Data Sources
+    - PubMed/MEDLINE database
+    - NCBI E-utilities API
+    - Curated drug and disease lists
+  version: 2.0.0
+  contact:
+    name: UpShiftRx Support
+    email: info@upshiftrx.ai
+    url: https://upshiftrx.ai
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://idyllic-salmiakki-7b5539.netlify.app/.netlify/functions
+    description: Production server
+
+paths:
+  /health:
+    get:
+      summary: Health Check
+      description: Check API health and availability
+      operationId: healthCheck
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+                  service:
+                    type: string
+                    example: upshiftrx-api
+                  platform:
+                    type: string
+                    example: netlify
+
+  /drugs:
+    get:
+      summary: Get Available Drugs
+      description: Retrieve list of drugs available for analysis
+      operationId: getDrugs
+      responses:
+        '200':
+          description: List of available drugs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  drugs:
+                    type: array
+                    items:
+                      type: string
+                    example: ["aspirin", "metformin", "ibuprofen"]
+
+  /diseases:
+    get:
+      summary: Get Available Diseases
+      description: Retrieve list of diseases available for analysis
+      operationId: getDiseases
+      responses:
+        '200':
+          description: List of available diseases
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  diseases:
+                    type: array
+                    items:
+                      type: string
+                    example: ["cancer", "diabetes", "heart disease"]
+
+  /analyze:
+    post:
+      summary: Analyze Drug-Disease Pair
+      description: |
+        Analyze the relationship between a drug and disease using PubMed literature.
+        
+        Returns research papers, publication counts, and metadata.
+      operationId: analyzeDrugDisease
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - drug
+                - disease
+              properties:
+                drug:
+                  type: string
+                  description: Name of the drug to analyze
+                  example: aspirin
+                  maxLength: 100
+                disease:
+                  type: string
+                  description: Name of the disease to analyze
+                  example: cancer
+                  maxLength: 100
+      responses:
+        '200':
+          description: Analysis results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  drug:
+                    type: string
+                    example: aspirin
+                  disease:
+                    type: string
+                    example: cancer
+                  paper_count:
+                    type: integer
+                    description: Number of papers returned
+                    example: 15
+                  total_found:
+                    type: integer
+                    description: Total papers found in PubMed
+                    example: 1247
+                  papers:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        pmid:
+                          type: string
+                          description: PubMed ID
+                          example: "12345678"
+                        title:
+                          type: string
+                          description: Paper title
+                          example: "Aspirin and cancer prevention"
+                        journal:
+                          type: string
+                          description: Journal name
+                          example: "Journal of Clinical Oncology"
+                        year:
+                          type: string
+                          description: Publication year
+                          example: "2023"
+                  search_query:
+                    type: string
+                    description: PubMed search query used
+                    example: "aspirin AND cancer"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    description: Analysis timestamp
+                    example: "2024-01-15T10:30:00.000Z"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Valid drug and disease strings required"
+        '405':
+          description: Method not allowed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Method not allowed"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Analysis failed"
+                  message:
+                    type: string
+                    example: "Unable to process request at this time"
+
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+
+tags:
+  - name: Health
+    description: API health and status
+  - name: Data
+    description: Available drugs and diseases
+  - name: Analysis
+    description: Drug repurposing analysis
