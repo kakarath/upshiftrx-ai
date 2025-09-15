@@ -63,3 +63,4 @@ temp/
 
 # Private repo reference (if using relative paths)
 ../upshiftrx-ai-private/
+.vercel
