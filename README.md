@@ -204,14 +204,44 @@ MIT License (flexible for open innovation).
 
 Founded in Maryland, USA — 2025.
 We are committed to using AI to accelerate medical breakthroughs and help physicians discover better treatments for their patients.
-Website: https://upshiftrx.ai (coming soon)
-Contact: info@upshiftrx.ai (coming soon)
+
+**Current Phase**: MVP Development (Phase 1 of 4)
+**Website**: https://upshiftrx.ai (in development)
+**Contact**: info@upshiftrx.ai (coming soon)
+
+### Development Ecosystem
+- **upshiftrx-ai** (this repo): Core R&D and public API
+- **upshiftrx-website**: User interface and search functionality
+- **upshiftrx-ai-private**: Proprietary models and full datasets
+
+## 🚀 Phase 1 Progress (MVP Development)
+
+**Current Status**: 60% Complete | [View Detailed Criteria](docs/PHASE_COMPLETION_CRITERIA.md)
+
+### ✅ Completed
+- PubMed mining pipeline
+- Interactive visualization system
+- API infrastructure
+- Sample datasets
+
+### 🔄 In Progress
+- Core AI models (drug-target interactions)
+- Dataset expansion (targeting 10M+ compounds)
+- Web interface development
+- Validation with known repurposing cases
+
+### 🎯 Phase 1 Goals
+- **Accuracy**: >85% on validation set
+- **Coverage**: 10M+ compounds analyzed
+- **Performance**: <2s API response time
+- **Validation**: 3 confirmed repurposing cases
 
 ## 🔮 Future Work
 
 - Expand beyond PubMed → integrate DrugBank + ClinicalTrials.gov
 - Add machine learning ranking of drug–disease links
 - Build interactive web dashboard for researchers and clinicians
+- Deploy serverless N-M search capabilities (drug↔diseases)
 
 ## 🔥 Slogan ideas for UpShiftRx
 
