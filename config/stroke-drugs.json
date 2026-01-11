@@ -1,0 +1,145 @@
+{
+  "stroke_drugs": {
+    "acute_ischemic": [
+      {
+        "name": "Alteplase (tPA)",
+        "mechanism": "Thrombolytic - dissolves blood clots",
+        "window": "0-4.5 hours from onset",
+        "repurposing_potential": "High",
+        "research_status": "FDA approved for acute stroke"
+      },
+      {
+        "name": "Tenecteplase",
+        "mechanism": "Thrombolytic - fibrin-specific",
+        "window": "0-4.5 hours from onset", 
+        "repurposing_potential": "High",
+        "research_status": "Under investigation for stroke"
+      },
+      {
+        "name": "Aspirin",
+        "mechanism": "Antiplatelet - prevents clot formation",
+        "window": "24-48 hours post-stroke",
+        "repurposing_potential": "Established",
+        "research_status": "Standard of care"
+      }
+    ],
+    "neuroprotection": [
+      {
+        "name": "Citicoline",
+        "mechanism": "Enhances membrane synthesis and repair",
+        "indication": "Cognitive recovery post-stroke",
+        "repurposing_potential": "High",
+        "research_status": "Multiple clinical trials"
+      },
+      {
+        "name": "Memantine",
+        "mechanism": "NMDA receptor antagonist",
+        "indication": "Prevents excitotoxicity",
+        "repurposing_potential": "Medium",
+        "research_status": "Repurposed from Alzheimer's treatment"
+      },
+      {
+        "name": "Minocycline",
+        "mechanism": "Anti-inflammatory, neuroprotective",
+        "indication": "Reduces brain inflammation",
+        "repurposing_potential": "High",
+        "research_status": "Repurposed from antibiotic use"
+      }
+    ],
+    "rehabilitation_enhancement": [
+      {
+        "name": "Fluoxetine",
+        "mechanism": "SSRI - enhances neuroplasticity",
+        "indication": "Motor recovery enhancement",
+        "repurposing_potential": "High",
+        "research_status": "FLAME trial - positive results"
+      },
+      {
+        "name": "Levodopa",
+        "mechanism": "Dopamine precursor",
+        "indication": "Motor learning enhancement",
+        "repurposing_potential": "Medium",
+        "research_status": "Repurposed from Parkinson's treatment"
+      },
+      {
+        "name": "Modafinil",
+        "mechanism": "Wakefulness promoting agent",
+        "indication": "Fatigue reduction, cognitive enhancement",
+        "repurposing_potential": "Medium",
+        "research_status": "Under investigation"
+      }
+    ],
+    "secondary_prevention": [
+      {
+        "name": "Atorvastatin",
+        "mechanism": "HMG-CoA reductase inhibitor",
+        "indication": "Cholesterol reduction, plaque stabilization",
+        "repurposing_potential": "Established",
+        "research_status": "Standard of care"
+      },
+      {
+        "name": "Clopidogrel",
+        "mechanism": "P2Y12 receptor antagonist",
+        "indication": "Antiplatelet therapy",
+        "repurposing_potential": "Established", 
+        "research_status": "Standard of care"
+      },
+      {
+        "name": "Lisinopril",
+        "mechanism": "ACE inhibitor",
+        "indication": "Blood pressure control",
+        "repurposing_potential": "Established",
+        "research_status": "Standard of care"
+      }
+    ]
+  },
+  "rehabilitation_therapies": {
+    "motor_recovery": [
+      "Constraint-induced movement therapy",
+      "Robot-assisted arm training",
+      "Functional electrical stimulation",
+      "Mirror therapy",
+      "Virtual reality training"
+    ],
+    "cognitive_recovery": [
+      "Computer-based cognitive training",
+      "Attention process training",
+      "Memory rehabilitation",
+      "Executive function training",
+      "Language therapy (for aphasia)"
+    ],
+    "emerging_approaches": [
+      "Transcranial direct current stimulation (tDCS)",
+      "Transcranial magnetic stimulation (TMS)",
+      "Brain-computer interfaces",
+      "Exoskeleton training",
+      "Stem cell therapy"
+    ]
+  },
+  "recovery_phases": {
+    "hyperacute": {
+      "timeframe": "0-24 hours",
+      "focus": "Reperfusion, neuroprotection",
+      "key_drugs": ["Alteplase", "Aspirin", "Heparin"],
+      "interventions": ["Thrombolysis", "Thrombectomy", "Blood pressure management"]
+    },
+    "acute": {
+      "timeframe": "1-7 days", 
+      "focus": "Stabilization, early mobilization",
+      "key_drugs": ["Aspirin", "Statins", "Antihypertensives"],
+      "interventions": ["DVT prevention", "Swallow assessment", "Early mobilization"]
+    },
+    "subacute": {
+      "timeframe": "1 week - 3 months",
+      "focus": "Intensive rehabilitation",
+      "key_drugs": ["Fluoxetine", "Citicoline", "Levodopa"],
+      "interventions": ["Physical therapy", "Occupational therapy", "Speech therapy"]
+    },
+    "chronic": {
+      "timeframe": "3+ months",
+      "focus": "Long-term recovery, adaptation",
+      "key_drugs": ["Antidepressants", "Cognitive enhancers", "Secondary prevention"],
+      "interventions": ["Community reintegration", "Adaptive strategies", "Caregiver support"]
+    }
+  }
+}
