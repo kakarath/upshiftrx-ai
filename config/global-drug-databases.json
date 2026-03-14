@@ -1,0 +1,166 @@
+{
+  "global_regulatory_agencies": {
+    "north_america": {
+      "FDA_US": {
+        "name": "Food and Drug Administration",
+        "country": "United States",
+        "api_endpoints": {
+          "adverse_events": "https://api.fda.gov/drug/event.json",
+          "drug_labels": "https://api.fda.gov/drug/label.json",
+          "recalls": "https://api.fda.gov/drug/enforcement.json"
+        },
+        "coverage": "Comprehensive US market data",
+        "status": "active"
+      },
+      "HC_CA": {
+        "name": "Health Canada",
+        "country": "Canada", 
+        "description": "Canadian drug regulatory authority",
+        "status": "limited_api"
+      }
+    },
+    "europe": {
+      "EMA_EU": {
+        "name": "European Medicines Agency",
+        "region": "European Union",
+        "api_endpoints": {
+          "chembl": "https://www.ebi.ac.uk/chembl/api/data",
+          "emea": "https://www.ema.europa.eu/en"
+        },
+        "coverage": "EU-wide drug approvals and safety",
+        "status": "active"
+      },
+      "MHRA_UK": {
+        "name": "Medicines and Healthcare products Regulatory Agency",
+        "country": "United Kingdom",
+        "description": "Post-Brexit UK drug regulation",
+        "status": "limited_api"
+      }
+    },
+    "asia": {
+      "PMDA_JP": {
+        "name": "Pharmaceuticals and Medical Devices Agency",
+        "country": "Japan",
+        "description": "Japanese drug regulatory authority",
+        "population_focus": "Japanese and East Asian populations",
+        "status": "limited_api"
+      },
+      "NMPA_CN": {
+        "name": "National Medical Products Administration",
+        "country": "China",
+        "description": "Chinese drug regulatory authority",
+        "population_focus": "Han Chinese and ethnic minorities",
+        "traditional_medicine": "Integration with Traditional Chinese Medicine",
+        "status": "limited_api"
+      },
+      "CDSCO_IN": {
+        "name": "Central Drugs Standard Control Organisation",
+        "country": "India",
+        "description": "Indian drug regulatory authority",
+        "population_focus": "South Asian populations",
+        "traditional_medicine": "Ayurvedic medicine interactions",
+        "status": "limited_api"
+      },
+      "KFDA_KR": {
+        "name": "Korea Food and Drug Administration",
+        "country": "South Korea",
+        "description": "Korean drug regulatory authority",
+        "status": "limited_api"
+      }
+    },
+    "africa": {
+      "SAHPRA_ZA": {
+        "name": "South African Health Products Regulatory Authority",
+        "country": "South Africa",
+        "description": "Leading African regulatory authority",
+        "population_focus": "African populations",
+        "disease_focus": "HIV/AIDS, TB, Malaria",
+        "status": "limited_api"
+      },
+      "NAFDAC_NG": {
+        "name": "National Agency for Food and Drug Administration and Control",
+        "country": "Nigeria",
+        "description": "West African regulatory leadership",
+        "status": "limited_api"
+      }
+    },
+    "oceania": {
+      "TGA_AU": {
+        "name": "Therapeutic Goods Administration",
+        "country": "Australia",
+        "description": "Australian drug regulatory authority",
+        "status": "limited_api"
+      }
+    },
+    "international": {
+      "WHO": {
+        "name": "World Health Organization",
+        "scope": "Global",
+        "api_endpoints": {
+          "gho": "https://ghoapi.azureedge.net/api"
+        },
+        "essential_medicines": "WHO Essential Medicines List",
+        "status": "active"
+      },
+      "ICH": {
+        "name": "International Council for Harmonisation",
+        "scope": "Global harmonization",
+        "description": "International drug development standards",
+        "status": "reference_only"
+      }
+    }
+  },
+  "population_specific_considerations": {
+    "genetic_factors": {
+      "CYP2D6_variants": {
+        "populations": ["European", "African", "Asian"],
+        "drug_metabolism": "Affects many psychiatric and cardiac drugs",
+        "clinical_significance": "Dosing adjustments may be needed"
+      },
+      "HLA_alleles": {
+        "populations": ["Han Chinese", "Thai", "European"],
+        "drug_reactions": "Severe skin reactions to certain drugs",
+        "clinical_significance": "Genetic testing recommended"
+      }
+    },
+    "disease_prevalence": {
+      "malaria_endemic": {
+        "regions": ["Sub-Saharan Africa", "Southeast Asia"],
+        "drug_interactions": "Antimalarial drug interactions",
+        "considerations": "Resistance patterns vary by region"
+      },
+      "hiv_prevalence": {
+        "regions": ["Southern Africa", "Eastern Africa"],
+        "drug_interactions": "ARV drug interactions critical",
+        "considerations": "Drug-drug interactions with ARVs"
+      }
+    }
+  },
+  "traditional_medicine_systems": {
+    "traditional_chinese_medicine": {
+      "region": "China, East Asia",
+      "considerations": "Herb-drug interactions",
+      "regulatory_integration": "NMPA considers TCM interactions"
+    },
+    "ayurveda": {
+      "region": "India, South Asia", 
+      "considerations": "Ayurvedic medicine interactions",
+      "regulatory_integration": "CDSCO monitors traditional medicine use"
+    },
+    "traditional_african_medicine": {
+      "region": "Sub-Saharan Africa",
+      "considerations": "Traditional healer practices",
+      "regulatory_integration": "Limited formal integration"
+    }
+  },
+  "data_quality_indicators": {
+    "high_quality": ["FDA_US", "EMA_EU", "WHO"],
+    "moderate_quality": ["PMDA_JP", "SAHPRA_ZA"],
+    "limited_data": ["NMPA_CN", "CDSCO_IN", "NAFDAC_NG"],
+    "api_availability": {
+      "full_api": ["FDA_US", "EMA_EU/ChEMBL", "WHO"],
+      "limited_api": ["Most regional agencies"],
+      "no_public_api": ["Some developing country agencies"]
+    }
+  }
+}
