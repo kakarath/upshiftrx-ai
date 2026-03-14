@@ -1,35 +1,41 @@
 # Security Policy
 
-## Security Measures Implemented
+## Supported Versions
 
-### Input Validation
-- All user inputs are sanitized and validated
-- Maximum input length limits enforced
-- Special character filtering to prevent injection attacks
+| Version | Supported |
+|---------|-----------|
+| 2.x.x   | ✅ Active  |
+| < 2.0   | ❌ EOL     |
 
-### API Security
-- CORS properly configured
-- Error handling prevents information leakage
-- Rate limiting considerations for production deployment
+## Reporting a Vulnerability
 
-### Dependencies
-- Regular security updates for all packages
-- Vulnerability scanning enabled
-- Minimal dependency footprint
+UpShiftRx takes security seriously, especially given the healthcare context of this platform.
 
-### Data Protection
-- No sensitive data stored in code
-- Environment variables for configuration
-- Secure API communication over HTTPS
+**Please do NOT open a public GitHub issue for security vulnerabilities.**
 
-## Reporting Security Issues
+Report vulnerabilities privately to: **info@upshiftrx.ai**
 
-If you discover a security vulnerability, please email: security@upshiftrx.ai
+Include:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
 
-## Security Best Practices
+We will acknowledge receipt within **48 hours** and aim to resolve critical issues within **7 days**.
 
-1. Keep dependencies updated
-2. Use environment variables for sensitive config
-3. Implement proper error handling
-4. Validate all user inputs
-5. Use HTTPS in production
+## Scope
+
+- API endpoints at `https://idyllic-salmiakki-7b5539.netlify.app/.netlify/functions/`
+- All code in this repository
+
+## Out of Scope
+
+- Third-party APIs (PubMed/NCBI, FDA, ChEMBL) — report those to their respective teams
+- Social engineering attacks
+
+## Disclosure Policy
+
+We follow **coordinated disclosure**. Once a fix is deployed, we will credit the reporter (with permission) in our CHANGELOG.
+
+---
+_UpShiftRx LLC — Maryland, USA_

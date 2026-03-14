@@ -1,12 +1,21 @@
 {
   "name": "upshiftrx-ai",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "AI-Powered Drug Repurposing Platform - Real PubMed Integration",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "python api/index.py",
-    "deploy": "netlify deploy --prod"
+    "deploy": "netlify deploy --prod",
+    "commit": "cz",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "repository": {
     "type": "git",
@@ -24,5 +33,10 @@
   "bugs": {
     "url": "https://github.com/YOUR_USERNAME/upshiftrx-ai/issues"
   },
-  "homepage": "https://upshiftrx.ai"
+  "homepage": "https://upshiftrx.ai",
+  "devDependencies": {
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "standard-version": "^9.5.0"
+  }
 }
