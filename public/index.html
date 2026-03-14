@@ -268,8 +268,8 @@
 
 <footer>
   &copy; <span id="year"></span> UpShiftRx LLC — Maryland, USA &nbsp;|&nbsp;
-  <a href="/.netlify/functions/health" target="_blank" rel="noopener noreferrer">API Health</a> &nbsp;|&nbsp;
-  <a href="https://upshiftrx.ai" target="_blank" rel="noopener noreferrer">upshiftrx.ai</a>
+  <a href="/.netlify/functions/health" target="_blank" rel="noreferrer noopener">API Health</a> &nbsp;|&nbsp;
+  <a href="https://upshiftrx.ai" target="_blank" rel="noreferrer noopener">upshiftrx.ai</a>
 </footer>
 
 <script>
@@ -326,6 +326,8 @@
 
     setLoading(true);
     hideError();
+    document.getElementById('resultMeta').innerHTML = '';
+    document.getElementById('paperList').innerHTML = '';
     document.getElementById('results').style.display = 'none';
     document.getElementById('emptyCard').style.display = 'none';
 
@@ -374,7 +376,7 @@
           <div class="paper-meta">
             <span>📰 ${p.journal || p.source || 'Unknown Journal'}</span>
             <span>📅 ${p.year || p.pub_year || 'N/A'}</span>
-            ${p.pmid ? `<span>🔗 <a href="https://pubmed.ncbi.nlm.nih.gov/${p.pmid}" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">PMID ${p.pmid}</a></span>` : ''}
+            ${p.pmid ? `<span>🔗 <a href="https://pubmed.ncbi.nlm.nih.gov/${p.pmid}" target="_blank" rel="noreferrer noopener" style="color:var(--accent)">PMID ${p.pmid}</a></span>` : ''}
           </div>
           <div class="confidence-bar">
             <div class="confidence-fill" style="width:${confidence}%"></div>
@@ -389,6 +391,8 @@
   function clearResults() {
     document.getElementById('results').style.display = 'none';
     document.getElementById('emptyCard').style.display = 'block';
+    document.getElementById('resultMeta').innerHTML = '';
+    document.getElementById('paperList').innerHTML = '';
     hideError();
   }
 
