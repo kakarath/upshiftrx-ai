@@ -3,7 +3,7 @@
     "name": "UpShiftRx API",
     "description": "AI-Powered Drug Repurposing API - Discover new uses for existing drugs through PubMed literature mining",
     "version": "2.0.0",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.1/collection.json"
   },
   "variable": [
     {

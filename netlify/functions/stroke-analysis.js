@@ -213,7 +213,7 @@ exports.handler = async (event, context) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        version: '2.1.0',
+        version: '2.1.1',
         analysis_type: 'stroke_specific',
         timestamp: new Date().toISOString(),
         data_sources: ['PubMed/MEDLINE', 'Clinical Guidelines', 'Rehabilitation Research'],

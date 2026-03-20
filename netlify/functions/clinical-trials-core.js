@@ -200,7 +200,7 @@ async function handler(event, context) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        version: '2.1.0',
+        version: '2.1.1',
         analysis_type: 'alternative_clinical_trials',
         search_parameters: {
           condition: searchCondition,

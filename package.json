@@ -1,6 +1,6 @@
 {
   "name": "upshiftrx-ai",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "AI-Powered Drug Repurposing Platform - Real PubMed Integration",
   "main": "index.js",
   "scripts": {

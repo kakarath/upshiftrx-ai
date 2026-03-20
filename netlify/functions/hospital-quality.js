@@ -184,7 +184,7 @@ exports.handler = async (event, context) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        version: '2.1.0',
+        version: '2.1.1',
         data_sources: ['CMS Hospital Compare', 'Hospital Quality Reporting'],
         timestamp: new Date().toISOString(),
         ...results,
